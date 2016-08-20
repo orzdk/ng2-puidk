@@ -1,0 +1,23 @@
+/* Form CSS */
+button, input {
+  font-family: CSFont;
+  font-size: 16px;
+  text-align:center;
+  margin:2px;
+  box-shadow: inset 4px 4px 20px rgba(255, 0, 0, 0.75);
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    red;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    red;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    red;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    red;
+}

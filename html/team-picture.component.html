@@ -1,0 +1,13 @@
+<div class="box max red">
+	<div class="boxheader">The CS-GO Team</div>
+	<table>
+		<tr>
+			<td *ngFor="let teammember of team" class="form-row">
+				<figure class="red">
+					<img src="{{teammember.picture}}" alt="Name" class="profile">
+					<figcaption>{{teammember.name}}</figcaption>
+				</figure>
+			</td>
+		</tr>
+	</table>
+</div>

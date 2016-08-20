@@ -1,0 +1,16 @@
+.match {
+  line-height:20px;
+  font-size:14px;
+}
+
+.win {
+  color:green;
+}
+
+.tied {
+  color:yellow;
+}
+
+.loss {
+  color:Red
+}

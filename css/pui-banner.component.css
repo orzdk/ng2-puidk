@@ -1,0 +1,18 @@
+/* Header CSS */
+header {
+  margin-top:5px;
+  margin-bottom:5px;
+  background-color: #000;
+  height:150px;
+  border-top-left-radius:75px;
+  border-bottom-left-radius:75px;
+  border-top-right-radius:15px 25px;
+  border-bottom-right-radius:15px 25px;
+  font-size:67px;
+  text-shadow: 2px 2px #ff0000;
+}
+
+#puilogo {
+  height:150px;
+  vertical-align:middle
+}
