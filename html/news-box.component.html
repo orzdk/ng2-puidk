@@ -1,5 +1,7 @@
-<div class="box red">
-	<div class="boxheader">{{newsitem.headline}}</div>
-	<br/><br/>
-	{{newsitem.story}}
-</div>
+<redbox2 [header]="newsitem.headline"
+		 [boxtype]="'standard'"
+		 [boxGo]="'left'">
+
+	<br/>{{newsitem.story}}
+</redbox2>
+

@@ -3,10 +3,7 @@
 	<table>
 		<tr>
 			<td *ngFor="let teammember of team" class="form-row">
-				<figure class="red">
-					<img src="{{teammember.picture}}" alt="Name" class="profile">
-					<figcaption>{{teammember.name}}</figcaption>
-				</figure>
+				<team-picture-box [name]="teammember.name" [picture]="teammember.picture"></team-picture-box>
 			</td>
 		</tr>
 	</table>

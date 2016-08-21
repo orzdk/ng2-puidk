@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { MatchResult } from './class/matchresult.class';
 import { RedBox } from './red-box.component';
+import { RedBox2 } from './red-box2.component';
 
 @Component({
     selector: 'match-results',
     templateUrl: 'html/match-results.component.html',
     styleUrls: ['css/match-results.component.css'],
-    directives: [ RedBox ]
+    directives: [ RedBox, RedBox2 ]
 })
 export class MatchResults { 
 		results: MatchResult[] = [

@@ -1,0 +1,14 @@
+figure {
+  text-align:center;
+  margin:5px;
+  border-radius:5px;
+  padding-bottom:5px;
+  font-size:14px;
+}
+
+.profile {
+  width:120px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+}
+

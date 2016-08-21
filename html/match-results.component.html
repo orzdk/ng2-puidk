@@ -1,6 +1,10 @@
-<redbox [boxtype]="1">
-	<div class="boxheader">Matches</div>
+<redbox2 [header]="'Matches'"
+		 [boxtype]="'standard'"
+		 [boxGo]="'right'"
+		 [textCenter]="'yes'"
+		 [w200]="'yes'">
+
 	<div class="match">
 		<span *ngFor="let res of results" [ngClass]="res.result"><span>{{res.team1}} - {{res.team2}}</span><br></span>
 	</div>
-</redbox>
+</redbox2>

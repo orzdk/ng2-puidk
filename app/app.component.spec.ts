@@ -9,9 +9,11 @@ import { By }             from '@angular/platform-browser';
 
 /// Delete this
 describe('Smoke test', () => {
+
   it('should run a passing test', () => {
     expect(true).toEqual(true, 'should pass');
   });
+  
 });
 
 describe('AppComponent with TCB', function () {
@@ -21,9 +23,7 @@ describe('AppComponent with TCB', function () {
   });
 
   it('should instantiate component', () => {
-    TestBed.compileComponents().catch(error => console.error(error));
     let fixture = TestBed.createComponent(AppComponent);
-    TestBed.compileComponents().catch(error => console.error(error));
     expect(fixture.componentInstance instanceof AppComponent).toBe(true, 'should create AppComponent');
   });
 
@@ -40,4 +40,5 @@ describe('AppComponent with TCB', function () {
     expect(h1.innerText).toMatch(/angular 2 app/i, '<h1> should say something about "Angular 2 App"');
   });
   */
+  
 });

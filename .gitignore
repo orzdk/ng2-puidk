@@ -21,6 +21,9 @@ app/**/*.map
 # Windows shortcuts
 *.lnk
 
+#nodejs modules
+node_modules
+
 # =========================
 # Operating System Files
 # =========================
