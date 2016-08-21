@@ -12,7 +12,7 @@ import { Directive, ElementRef } from '@angular/core';
 			 [class.goMax]="boxMax=='yes'"
 			 [class.textCenter]="textCenter=='yes'"
 			 [class.w200]="w200=='yes'">
-				<span *ngIf="header"><div class="boxheader">{{header}}</div><br></span>
+				<span *ngIf="header"><div class="boxheader">{{header}}</div></span>
 				<ng-content></ng-content>
 		</div>
     `,
@@ -37,17 +37,7 @@ export class RedBox2 {
 
 	@Input() 
 	boxMax: string;
-
-
 }
 
-
-
-@Directive({ selector: '[myHighlight]' })
-export class HighlightDirective {
-    constructor(el: ElementRef) {
-       el.nativeElement.style.backgroundColor = 'yellow';
-    }
-}
 
 

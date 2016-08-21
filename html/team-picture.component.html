@@ -1,5 +1,8 @@
-<div class="box max red">
-	<div class="boxheader">The CS-GO Team</div>
+<redbox2 [header]="'The CS-GO Team'"
+		 [boxtype]="'standard'"
+		 [boxGo]="'left'"
+		 [boxMax]="'yes'">
+
 	<table>
 		<tr>
 			<td *ngFor="let teammember of team" class="form-row">
@@ -7,4 +10,5 @@
 			</td>
 		</tr>
 	</table>
-</div>
+
+</redbox2>

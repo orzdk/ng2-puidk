@@ -12,3 +12,6 @@ figure {
   border-top-right-radius:5px;
 }
 
+.redBox {
+    box-shadow: inset 4px 4px 20px rgba(255, 0, 0, 0.75), 3px 3px 10px rgba(18, 52, 86, 0.5);
+ }

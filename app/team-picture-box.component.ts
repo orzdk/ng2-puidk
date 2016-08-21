@@ -4,7 +4,7 @@ import { Member } from './class/member.class';
 @Component({
     selector: 'team-picture-box',
     template:`
-		<figure class="red">
+		<figure class="redBox">
 			<img src="{{picture}}" alt="Name" class="profile">
 			<figcaption>{{name}}</figcaption>
 		</figure>
