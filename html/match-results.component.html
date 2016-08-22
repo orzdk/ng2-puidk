@@ -1,8 +1,4 @@
-<redbox2 [header]="'Matches'"
-		 [boxtype]="'standard'"
-		 [boxGo]="'right'"
-		 [textCenter]="'yes'"
-		 [w200]="'yes'">
+<redbox [header]="'Matches'" [boxtype]="'infobox'">
 
 	<div class="match">
 		<span *ngFor="let res of results" [ngClass]="res.result">
@@ -10,4 +6,4 @@
 		</span>
 	</div>
 
-</redbox2>
+</redbox>
