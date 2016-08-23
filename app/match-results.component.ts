@@ -12,10 +12,10 @@ export class MatchResults {
 		results: MatchResult[] = [
 
 		{ team1: 'PUI', team2: 'Team Redbull', result:'win'},
-		{ team1: 'PUI', team2: 'Team NemID', result:'win'},
-		{ team1: 'PUI', team2: 'Team Skrivebord', result:'tied'},
-		{ team1: 'PUI', team2: 'Team Kildevand', result:'tied'},
-		{ team1: 'PUI', team2: 'Team Gamepad', result:'loss'},
-		{ team1: 'PUI', team2: 'Team Usbkey', result:'loss'}
+		{ team1: 'PUI', team2: 'Team Test', result:'win'},
+		{ team1: 'PUI', team2: 'Team Ohhlongjohnson', result:'tied'},
+		{ team1: 'PUI', team2: 'Team OhDoonpiano', result:'tied'},
+		{ team1: 'PUI', team2: 'Team Senôr Ding-dong', result:'loss'},
+		{ team1: 'PUI', team2: 'Team Apu', result:'loss'}
 	]
 }

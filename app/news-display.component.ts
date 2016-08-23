@@ -11,10 +11,10 @@ import { NewsBox } from './news-box.component';
 export class NewsDisplay { 
 
 	newsarticles: News[] = [
-		{ headline: 'Ost lugter !', story: 'Ost lugter grimt blablabalabalba' },
-		{ headline: 'PUI har vundet igen !', story: 'Det andet team lugter grimt' },
-		{ headline: 'PUI har vundet EM !', story: 'Europa lugter grimt blablabalabalba' },
-		{ headline: 'PUI har vundet VM !', story: 'Hele verden lugter grimt blablabalabalba'}
+		{ headline: 'PUI won the game', story: 'PUI rulez the round !' },
+		{ headline: 'PUI won the tournament', story: 'PUI rulez the tournament !' },
+		{ headline: 'PUI won the big one', story: 'PUI rulez the world !' },
+		{ headline: 'PUI won it all', story: 'PUI rulez the universe !'}
 
 	]
 }
