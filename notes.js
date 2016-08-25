@@ -27,3 +27,39 @@ gulp.task('copy:libs', function() {
     ], {cwd: "node_modules/**"})
     .pipe(gulp.dest('dist/lib'))
 });
+
+
+  return tsResult.js.pipe(addsrc.append('config-prod.js'))
+                    .pipe(concat('app.min.js'))
+                    .pipe(uglify())
+                    .pipe(gulp.dest('./dist'));
+
+  
+  gem:
+
+
+gulp.task('app.systemjs.bundle2', function () {
+
+  // optional constructor options
+  // sets the baseURL and loads the configuration file
+  var builder = new systemjsbuilder('path/to/baseURL', 'path/to/system/config-file.js');
+
+  builder
+  .bundle('local/module.js', 'outfile.js')
+  .then(function() {
+    console.log('Build complete');
+  })
+  .catch(function(err) {
+    console.log('Build error');
+    console.log(err);
+  });
+
+});
+
+gulp.task('boot-bundle', function() {
+  gulp.src('config.prod.js')
+    .pipe(concat('puidk.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./wwwroot'));
+});
+

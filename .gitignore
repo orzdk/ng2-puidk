@@ -18,6 +18,9 @@ $RECYCLE.BIN/
 app/**/*.js
 app/**/*.map
 
+# dist folder
+wwwroot
+
 # Windows shortcuts
 *.lnk
 
