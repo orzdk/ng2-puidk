@@ -9,7 +9,9 @@ npm install
 gulp
 
 node/wwwroot/supersimpleserver.js
+
 OR
+
 npm start
 
 
