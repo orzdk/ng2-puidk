@@ -6,8 +6,7 @@
 
   // map tells the System loader where to look for things
   var map = {
-    'app':                        'app', // 'dist',
-
+    'app':                        'app',//'dist/app',
     '@angular':                   'node_modules/@angular',
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     'rxjs':                       'node_modules/rxjs'
@@ -33,6 +32,11 @@
     'upgrade',
   ];
 
+  // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
+  ngPackageNames.forEach(function (pkgName) {
+      packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
+  });
+
   // Individual files (~300 requests):
   function packIndex(pkgName) {
     packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
@@ -56,6 +60,11 @@
     map: map,
     packages: packages
   };
+
+  // filterSystemConfig - index.html's chance to modify config before we register it.
+  if (global.filterSystemConfig) {
+      global.filterSystemConfig(config);
+  }
 
   System.config(config);
 
