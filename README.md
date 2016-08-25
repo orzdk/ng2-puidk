@@ -5,6 +5,7 @@ ng2-puidk is a sandbox for creating a new angular2 version of the site, and for 
 
 # Running the site
 npm install
+
 gulp
 
 node/wwwroot/supersimpleserver.js
