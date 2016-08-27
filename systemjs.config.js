@@ -3,9 +3,6 @@
  * Adjust as necessary for your application needs.
  */
 
- /* Angular 2 is running in the development mode. Call enableProdMode() to enable the production mode. */
-
-
 (function(global) {
 
   // map tells the System loader where to look for things
@@ -20,7 +17,7 @@
   var packages = {
     'puidk':                      { main: 'app.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
-    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' }
   };
 
   var ngPackageNames = [
@@ -48,7 +45,7 @@
 
   // Bundled (~40 requests):
   function packUmd(pkgName) {
-    packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+    packages['@angular/'+pkgName] = { main: 'bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
   }
 
   // Most environments should use UMD; some (Karma) need the individual index files
@@ -60,11 +57,12 @@
   // No umd for router yet
   packages['@angular/router'] = { main: 'index.js', defaultExtension: 'js' };
 
+
   var config = {
     map: map,
     packages: packages
   };
-
+      
   // filterSystemConfig - index.html's chance to modify config before we register it.
   if (global.filterSystemConfig) {
       global.filterSystemConfig(config);

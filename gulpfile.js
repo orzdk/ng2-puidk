@@ -9,6 +9,8 @@ var htmlreplace = require('gulp-html-replace');
 var embedTemplates = require('gulp-angular-embed-templates');
 var addsrc = require('gulp-add-src');
 const del = require('del');
+const cleanCSS = require('clean-css');
+const cssmin = require('gulp-cssmin');
 
 var systemjsbuilder = require('systemjs-builder');
 
@@ -17,9 +19,10 @@ gulp.task('clean', function () {
 });
 
 gulp.task('bundle-dependencies', function() {
-  var builder = new systemjsbuilder('', 'systemjs.config.js'); // config.js is the name of systemjs config file
+  var builder = new systemjsbuilder('', 'systemjs.config.js'); 
+
   return builder
-    .bundle('app/app.js - [app/**/*.js]', 'wwwroot/dependencies.bundle.js', { minify: true})
+    .bundle('app/app.js - [app/**/*.js]', 'wwwroot/lib/dependencies.bundle.js', { minify: true})
     .then(function() {
       console.log('Build complete');
     })
@@ -43,9 +46,10 @@ gulp.task('copy:libs', function() {
       'node_modules/zone.js/dist/zone.js',
       'node_modules/reflect-metadata/Reflect.js',
       'node_modules/systemjs/dist/system.src.js',
-      'node_modules/rxjs/**',
-      'node_modules/@angular/**'
+      'node_modules/rxjs/bundles/Rx.min.js',
     ])
+    .pipe(concat('puidk.index.min.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('wwwroot/lib'))
 });
 
@@ -77,14 +81,18 @@ gulp.task('copy:fonts', function() {
 gulp.task('fix-index', function() {
   return gulp.src('index.html')
     .pipe(htmlreplace({
-        'vendor': ['lib/shim.min.js','lib/zone.js','lib/Reflect.js','lib/system.src.js'],
-        'app':['dependencies.bundle.js']
+        'vendor': ['lib/puidk.index.min.js'],
+        'app':['lib/dependencies.bundle.js']
     }))
     .pipe(gulp.dest('wwwroot'));
 });
 
-gulp.task('default', ['clean'], function() {
-    gulp.start('compile','bundle-dependencies','copy:libs','copy:root','fix-index','copy:css','copy:html','copy:img','copy:fonts');
+gulp.task('build', ['clean'], function() {
+    gulp.start('all');
 });
 
+gulp.task('all', ['compile','copy:root','copy:libs','fix-index','copy:css','copy:html','copy:img','copy:fonts'], function(){
+    gulp.start('bundle-dependencies');
+});
 
+gulp.task('default', ['build']);
