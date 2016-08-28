@@ -20,6 +20,7 @@ app/**/*.map
 
 # dist folder
 wwwroot
+_test-output*
 
 # Windows shortcuts
 *.lnk

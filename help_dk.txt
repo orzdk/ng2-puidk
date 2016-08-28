@@ -1,0 +1,125 @@
+/app : Her ligger typescript filerne. Dette er sourcekoden der rettes i, aldrig i js. 
+
+/app/class: Typescript klasser, - feks user, member, skema
+
+/css : En css fil til hver component i /app
+
+/e2e : Relateret til unit test, ignore
+
+/fonts
+
+/html : En html fil til hvert component i /app
+
+/img
+
+/less : Her ligger .less filerne der automatisk kompileres til /css ved npm start
+
+/node_modules : Alle nødvendige moduler til test og kørsel af angular2 apps
+
+/src : Relateret til unit test, ignore
+
+/typings : Typescript kompiler support filer, ignore
+
+/wwwroot : Build folder
+
+--------------------------------------------------------------------------------------------
+
+Først 
+		cd kodefolder
+		npm install
+
+For at starte development server: 
+
+		npm start
+
+For at builde
+
+		gulp
+
+For at starte buildet version: 
+
+		cd wwwroot
+		node supersimpleserver.js
+
+--------------------------------------------------------------------------------------------
+App layout opbygning
+
+Først kig på \html\app.component.html, dette er hele websidens opbygning. Hvert element på siden er
+en komponent i \app folderen hvortil der hører en template i \html og et stylesheet i \css. 
+
+RedBox component er nok det vigtigste:
+
+Åbn \app\red-box.component.ts
+
+
+import { Component, Input,Directive, ElementRef  } from '@angular/core';	<---- Her inporterer vi noget stuff
+
+@Component({									<--- i @Component delen sætter vi template (url eller inline og styles (url eller inline))
+    selector: 'redbox',							<-- Dette er det som vores komponent kaldes med , <redbox>
+    template: `									<-- Inline template, bemærk funky citationstegn
+		<div [ngClass]="boxtype">				<-- Sæt klassen = værdien af boxtype variabel <redbox [boxtype]="...">
+				<span *ngIf="header">			<-- Hvis header (<redbox [header]="...") er sat
+					<div class="boxheader">		<-- Tegn headeren
+						{{header}}
+					</div>
+				</span>
+				<ng-content></ng-content>		<-- Rendering af det der står imellem tags <redbox>Dette her</redbox>
+		</div>
+    `,
+    styleUrls: ['css/red-box.component.css']	<-- Sti til css
+})
+export class RedBox { 							<-- Hernede er "controller" delen. (Hedder det ikke mere)
+
+	@Input() 									<-- Dette indikerer at det er en input variabel	der kan bruges som <redbox [header]="..."> 
+	header: string;								<-- Variabelnavn og type til <redbox [header]="..."> 
+
+	@Input() 
+	boxtype: string;
+
+}
+
+--------------------------------------------------------------------------------------------
+
+Bootstrapping
+
+Applikationen bootstrappes via kald i index.html:
+
+		System.import('puidk').catch(function(err){ console.error(err); });
+
+
+puidk peger via et alias i toppen af systemjs.config.js på app.js i /app folderen
+app.js importerer og bootstrapper vores app modul app/app.module.js	som selv bootstrapper AppComponent.
+AppComponent er vores supersimple html framework, og voila : )
+
+		<pui-banner></pui-banner>
+
+		<team-pictures></team-pictures>
+
+		<section-right>
+			<match-results></match-results>
+			<information-box></information-box>
+			<login-box></login-box>
+		</section-right>
+
+		<section>
+			<news-display></news-display>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
